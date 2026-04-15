@@ -40,15 +40,66 @@ if (form) {
   form.addEventListener('submit', (e) => {
     e.preventDefault();
 
+    const name = form.nombre.value.trim();
+    const lastName = form.apellido.value.trim();
+    const email = form.correo.value.trim();
+    const phone = form.telefono.value.trim();
+
+    const alertBox = form.querySelector('.alert');
+  
+    if (!name || !lastName || !email || !phone) {
+      alertBox.style.display = 'block';
+      alertBox.style.color = '#dc3545';
+      return;
+    }
+
+    if (!/^\d{10}$/.test(phone)) {
+      alertBox.style.display = 'block';
+      alertBox.style.color = '#dc3545';
+      alertBox.textContent = 'El número de teléfono debe tener 10 dígitos.';
+      return;
+    }
+
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      alertBox.style.display = 'block';
+      alertBox.style.color = '#dc3545';
+      alertBox.textContent = 'Por favor, ingresa un correo electrónico válido.';
+      return;
+    }
+
+    alertBox.style.display = 'none';
+    alertBox.textContent = '';
+  
     const btn = form.querySelector('button[type=submit]');
-    btn.textContent = '¡Enviado! ✓';
-    btn.style.background = '#28a745';
+    btn.textContent = 'Enviando...'; 
+    btn.disabled = true;
+    btn.style.background = '#6c757d';
+
+    fetch("MAIL/MAIL.PHP", {
+      method: "POST",
+      body: new FormData(form)
+    })
+    .then(res => res.json())
+    .then(response => {
+      if (response.ok) {
+        btn.textContent = '!Enviado¡';
+        btn.style.background = '#28a745';
+      } else {
+        btn.textContent = 'Enviar →';
+        btn.style.background = '#FF2D9B';
+      }
+    }).catch(error => {
+      alertBox.style.display = 'block';
+      alertBox.style.color = '#dc3545';
+      alertBox.textContent = 'Hubo un error al enviar el mensaje. Por favor, inténtalo de nuevo.';
+    });
 
     setTimeout(() => {
+      btn.disabled = false;
       btn.textContent = 'Enviar →';
-      btn.style.background = '';
+      btn.style.background = '#FF2D9B';
       form.reset();
-    }, 3000);
+    }, 2000);
   });
 }
 
