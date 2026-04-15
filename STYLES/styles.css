@@ -1249,8 +1249,8 @@ ul { list-style: none; }
    — Fondo negro, imagen con overlay, título centrado
 ============================================================ */
 .page-hero {
-  background: var(--black);
-  min-height: 380px;
+  background: var(--black) url('/BANNERS/BANNER_PLANES.webp') no-repeat center / cover;
+  min-height: 700px;
   display: flex;
   align-items: flex-end;
   padding-top: var(--nav-height);
@@ -1319,13 +1319,14 @@ ul { list-style: none; }
   padding: 60px var(--container-px);
   width: 100%;
   text-align: center;
+  bottom: 20vh;
 }
 
 .page-hero-content h1 {
   font-size: clamp(2.2rem, 4vw, 3.2rem);
   font-weight: 700;
   color: var(--white);
-  letter-spacing: -0.01em;
+  letter-spacing: 0.05em;
 }
 
 .page-hero-content h1 .text-magenta {
@@ -1669,6 +1670,16 @@ ul { list-style: none; }
 /* ============================================================
    PORTFOLIO PAGE
 ============================================================ */
+.portfolio-hero {
+  background: var(--black) url('/BANNERS/BANNER_PORTFOLIO.webp') no-repeat center / cover;
+  min-height: 700px;
+  display: flex;
+  align-items: flex-end;
+  padding-top: var(--nav-height);
+  position: relative;
+  overflow: hidden;
+}
+
 .portfolio-category {
   padding: 70px 0;
 }
