@@ -26,6 +26,12 @@
     </div>
     <div class="footer-divider"></div>
     <div class="footer-bottom">
-      <p>©STUDIO4 MARKETING 2026 TODOS LOS DERECHOS RESERVADOS &nbsp;|&nbsp; DESARROLLADO POR A W SOFTWARE</p>
-    </div>
+      <p>
+      ©STUDIO4 MARKETING <span id="year"></span> TODOS LOS DERECHOS RESERVADOS
+      &nbsp;|&nbsp; DESARROLLADO POR A W SOFTWARE
+    </p>
   </footer>
+
+  <script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
