@@ -882,39 +882,45 @@ ul { list-style: none; }
 ============================================================ */
 
 .clients {
-  background: linear-gradient(90deg, #1a1a1a, #111);
-  padding: 80px 0;
+  background: linear-gradient(90deg, #1c1c1c, #0f0f0f);
+  padding: 90px 0;
 }
 
+/* TÍTULO */
 .clients .section-title {
   color: #fff;
   text-align: center;
-  margin-bottom: 50px;
+  margin-bottom: 60px;
   font-size: clamp(1.3rem, 2vw, 1.7rem);
 }
 
+/* 🔥 CONTENEDOR CLAVE */
 .clients-logos {
   display: flex;
   align-items: center;
-  justify-content: space-between; 
-  gap: 40px;
-  max-width: 900px; 
+  justify-content: space-between; /* 🔥 ESTE ES EL TRUCO */
+  max-width: 1200px;              /* 🔥 más ancho */
   margin: 0 auto;
-  flex-wrap: nowrap; 
 }
 
+/* LOGOS BASE */
 .clients-logos img {
-  opacity: 0.75;
-  filter: brightness(0) invert(1);
-  transition: all 0.3s ease;
-  height: 42px; 
+  height: 55px;
   width: auto;
   object-fit: contain;
+  opacity: 0.85;
+  filter: brightness(0) invert(1);
+  transition: all 0.3s ease;
 }
 
+/* AJUSTE FINO (MUY SUAVE) */
+.clients-logos img:nth-child(2) { height: 45px; }
+.clients-logos img:nth-child(4) { height: 50px; }
+
+/* HOVER */
 .clients-logos img:hover {
   opacity: 1;
-  transform: scale(1.08);
+  transform: scale(1.05);
 }
 
 /* ============================================================
