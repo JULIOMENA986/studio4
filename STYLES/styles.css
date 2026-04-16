@@ -2052,7 +2052,12 @@ body { animation: fadeBody 0.3s ease; }
 /* ── Mobile ── */
 @media (max-width: 768px) {
   .page-hero {
-    min-height: 340px;
+    min-height: 50svh;
+    align-items: center;
+  }
+
+  .portfolio-hero {
+    min-height: 50svh;
     align-items: center;
   }
 
