@@ -1274,7 +1274,7 @@ ul { list-style: none; }
    — Fondo negro, imagen con overlay, título centrado
 ============================================================ */
 .page-hero {
-  background: var(--black) url('/BANNERS/BANNER_PLANES.webp') no-repeat center / cover;
+  background: var(--black) url('../BANNERS/BANNER_PLANES.webp') no-repeat center / cover;
   min-height: 700px;
   display: flex;
   align-items: flex-end;
@@ -1396,7 +1396,6 @@ ul { list-style: none; }
 
 .pricing-intro p {
   font-size: 0.88rem;
-  color: var(--gray-mid);
   margin-top: 10px;
 }
 
@@ -1413,7 +1412,9 @@ ul { list-style: none; }
 }
 
 .pricing-grid {
+  background: url('../IMAGES/GRADIENT_ELEMENT3.webp') no-repeat ;
   display: grid;
+  padding: 2.5rem;
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
   position: relative;
@@ -1421,7 +1422,7 @@ ul { list-style: none; }
 }
 
 .pricing-card {
-  background: #eeeeee;
+  background: white;
   border-radius: 18px;
   padding: 32px 26px 28px;
   display: flex;
@@ -1606,24 +1607,16 @@ ul { list-style: none; }
   padding: 36px 44px;
   box-shadow: var(--shadow-card);
   max-width: 780px;
-  margin: 0 auto;
   position: relative;
   overflow: visible;
 }
 
-/* Glow magenta lateral */
-.sm-table-wrap::before {
-  content: '';
-  position: absolute;
-  width: 220px;
-  height: 220px;
-  background: radial-gradient(circle, rgba(255,45,155,0.5) 0%, transparent 70%);
-  filter: blur(55px);
-  left: -90px;
-  top: 50%;
-  transform: translateY(-50%);
-  pointer-events: none;
-  z-index: 0;
+.sm-table-container {
+  background: url('../IMAGES/GRADIENT_ELEMENT3.webp') no-repeat ;
+  overflow-x: auto;
+  width: fit-content;
+  margin: auto;
+  padding: 2rem;
 }
 
 .sm-table {
@@ -1639,15 +1632,15 @@ ul { list-style: none; }
   font-weight: 700;
   letter-spacing: 0.04em;
   color: var(--dark);
-  padding: 10px 12px;
+  padding: 1rem 1.5rem 1rem 0;
   text-align: right;
 }
 
 .sm-table thead th:first-child { text-align: left; }
 
 .sm-table tbody td {
-  padding: 14px 12px;
-  text-align: right;
+  padding: 1rem 1.5rem 1rem 0;
+  text-align: center;
   border-top: 1px solid #f0f0f0;
   color: var(--dark);
 }
@@ -1658,7 +1651,7 @@ ul { list-style: none; }
 }
 
 .sm-table tfoot td {
-  padding: 20px 12px 4px;
+  padding: 1rem 1.5rem 1rem 0;
   text-align: right;
   font-size: 0.68rem;
   font-weight: 700;
@@ -1696,7 +1689,7 @@ ul { list-style: none; }
    PORTFOLIO PAGE
 ============================================================ */
 .portfolio-hero {
-  background: var(--black) url('/BANNERS/BANNER_PORTFOLIO.webp') no-repeat center / cover;
+  background: var(--black) url('../BANNERS/BANNER_PORTFOLIO.webp') no-repeat center / cover;
   min-height: 700px;
   display: flex;
   align-items: flex-end;
