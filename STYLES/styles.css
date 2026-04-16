@@ -43,7 +43,7 @@ html {
 
 @font-face {
   font-family: 'Bricolage';
-  src: url('../FONT/BricolageGrotesque-VariableFont_opsz,wdth,wght.ttf') format('truetype-variations');
+  src: url('../font/BricolageGrotesque-VariableFont_opsz,wdth,wght.ttf') format('truetype-variations');
   font-weight: 100 1000;
   font-stretch: 75% 125%;
   font-display: swap;
@@ -329,7 +329,7 @@ ul { list-style: none; }
 ============================================================ */
 .hero {
   position: relative;
-  background: var(--black) url('/IMAGES/4OVERLAY.webp') no-repeat center / contain;
+  background: var(--black) url('/images/4OVERLAY.webp') no-repeat center / contain;
   min-height: 680px;
   display: flex;
   align-items: center;
@@ -628,7 +628,7 @@ ul { list-style: none; }
   display: flex;
   align-items: center;
   overflow: hidden;
-  background: url("../BANNERS/BANNER.webp") right center / cover no-repeat;
+  background: url("../banners/BANNER.webp") right center / cover no-repeat;
 }
 
 .ala-medida::before {
@@ -892,7 +892,7 @@ ul { list-style: none; }
   display: flex;
   align-items: center;
   min-height: 400px;
-  background-image: url("../BANNERS/BANNER2.webp");
+  background-image: url("../banners/BANNER2.webp");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 78% center;
@@ -1151,7 +1151,7 @@ ul { list-style: none; }
    PAGE HERO (Planes, Portafolio)
 ============================================================ */
 .page-hero {
-  background: var(--black) url('../BANNERS/BANNER_PLANES.webp') no-repeat center / cover;
+  background: var(--black) url('../banners/BANNER_PLANES.webp') no-repeat center / cover;
   min-height: 700px;
   display: flex;
   align-items: flex-end;
@@ -1284,7 +1284,7 @@ ul { list-style: none; }
 }
 
 .pricing-grid {
-  background: url('../IMAGES/GRADIENT_ELEMENT3.webp') no-repeat;
+  background: url('../images/GRADIENT_ELEMENT3.webp') no-repeat;
   display: grid;
   padding: 2.5rem;
   grid-template-columns: repeat(3, 1fr);
@@ -1477,7 +1477,7 @@ ul { list-style: none; }
 }
 
 .sm-table-container {
-  background: url('../IMAGES/GRADIENT_ELEMENT3.webp') no-repeat;
+  background: url('../images/GRADIENT_ELEMENT3.webp') no-repeat;
   overflow-x: auto;
   width: fit-content;
   margin: auto;
@@ -1554,7 +1554,7 @@ ul { list-style: none; }
    PORTFOLIO PAGE
 ============================================================ */
 .portfolio-hero {
-  background: var(--black) url('../BANNERS/BANNER_PORTFOLIO.webp') no-repeat center / cover;
+  background: var(--black) url('../banners/BANNER_PORTFOLIO.webp') no-repeat center / cover;
   min-height: 700px;
   display: flex;
   align-items: flex-end;
@@ -2004,4 +2004,124 @@ body { animation: fadeBody 0.3s ease; }
 @keyframes fadeBody {
   from { opacity: 0; }
   to   { opacity: 1; }
+}
+
+/* ============================================================
+   PLANS.HTML — RESPONSIVE FIXES
+============================================================ */
+
+/* ── Tablet ── */
+@media (max-width: 1024px) {
+  .pricing-grid {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 1.5rem;
+  }
+
+  .pricing-card:last-child {
+    grid-column: span 2;
+    max-width: 380px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .dfs-inner {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .dfs-text p {
+    max-width: 100%;
+  }
+
+  .feature-card {
+    width: 100%;
+  }
+
+  .sm-table-container {
+    width: 100%;
+    overflow-x: auto;
+    padding: 1rem;
+  }
+
+  .sm-table-wrap {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+/* ── Mobile ── */
+@media (max-width: 768px) {
+  .page-hero {
+    min-height: 340px;
+    align-items: center;
+  }
+
+  .page-hero-content {
+    bottom: auto;
+    padding: 40px var(--container-px) 32px;
+  }
+
+  .page-hero-content h1 {
+    font-size: clamp(2rem, 8vw, 2.8rem);
+  }
+
+  .pricing-section {
+    padding: 64px 0 72px;
+  }
+
+  .pricing-grid {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 1rem;
+    gap: 16px;
+  }
+
+  .pricing-card:last-child {
+    grid-column: unset;
+    max-width: 100%;
+  }
+
+  .dark-feature-section {
+    padding: 56px 0;
+  }
+
+  .dfs-inner {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .dfs-text h2 {
+    font-size: clamp(1.5rem, 6vw, 2rem);
+  }
+
+  .dfs-text p {
+    max-width: 100%;
+    font-size: 0.9rem;
+  }
+
+  .feature-card {
+    padding: 24px 20px 28px;
+  }
+
+  .sm-table-section {
+    padding: 56px 0;
+  }
+
+  .sm-table-container {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding: 0.5rem;
+  }
+
+  .sm-table-wrap {
+    width: fit-content;
+    min-width: 100%;
+    padding: 20px 16px;
+  }
+
+  .sm-table {
+    min-width: 440px;
+  }
 }

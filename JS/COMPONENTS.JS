@@ -18,10 +18,10 @@ function loadComponent(id, file, callback) {
 
 // Cargar navbar y footer
 document.addEventListener("DOMContentLoaded", () => {
-  loadComponent("navbar-container", "COMPONENTS/NAV.HTML");
-  loadComponent("footer-container", "COMPONENTS/FOOTER.HTML");
+  loadComponent("navbar-container", "components/nav.html");
+  loadComponent("footer-container", "components/footer.html");
 });
-fetch('../COMPONENTS/NAV.HTML')
+fetch('../components/nav.html')
   .then(res => res.text())
   .then(html => {
     document.getElementById('navbar-container').innerHTML = html;
