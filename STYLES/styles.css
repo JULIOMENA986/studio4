@@ -1151,8 +1151,9 @@ ul { list-style: none; }
 ============================================================ */
 
 .footer {
-  background: linear-gradient(90deg, #1c1c1c, #0f0f0f);
-  padding: 70px 0 20px;
+  background: linear-gradient(90deg, #212020, #0f0f0f);
+  padding: 3rem 0px;
+  margin-top: 2rem;
 }
 
 /* CONTENIDO PRINCIPAL */
@@ -1161,7 +1162,7 @@ ul { list-style: none; }
   align-items: center;
   justify-content: space-between;
   gap: 40px;
-  padding-bottom: 60px;
+  padding: 6rem 60px;
 }
 
 /* LOGO */
@@ -1212,8 +1213,8 @@ ul { list-style: none; }
 }
 
 .social-icon {
-  width: 40px;
-  height: 40px;
+  width: fit-content;
+  height: fit-content;
   border-radius: 50%;
   background: rgba(255,255,255,0.08);
   display: flex;
@@ -1223,8 +1224,8 @@ ul { list-style: none; }
 }
 
 .social-icon img {
-  width: 18px;
-  height: 18px;
+  width: 1.5rem;
+  height: 1.5rem;
   filter: brightness(0) invert(1);
 }
 
@@ -1249,8 +1250,8 @@ ul { list-style: none; }
 }
 
 .footer-bottom p {
-  font-size: 0.65rem;
-  color: rgba(255,255,255,0.35);
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.65);
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
