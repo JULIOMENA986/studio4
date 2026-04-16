@@ -103,92 +103,100 @@ if (form) {
   });
 }
 
-// ===============================
-// INTERSECTION OBSERVER (INDEX)
-// ===============================
-const animatedElements = document.querySelectorAll('.animate-up');
-
-if (animatedElements.length > 0) {
-  const observerOpts = {
-    threshold: 0.12,
-    rootMargin: '0px 0px -40px 0px'
-  };
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, observerOpts);
-
-  animatedElements.forEach(el => observer.observe(el));
-}
-
-// ===============================
-// PORTFOLIO SLIDER (SOLO PORTFOLIO)
-// ===============================
 const sliderWraps = document.querySelectorAll('.portfolio-slider-wrap');
 
 if (sliderWraps.length > 0) {
   sliderWraps.forEach((wrap) => {
     const slider = wrap.querySelector('.portfolio-slider');
-    const slides = slider.querySelectorAll('.portfolio-slide');
+    const originalSlides = Array.from(slider.querySelectorAll('.portfolio-slide'));
     const dotsContainer = wrap.nextElementSibling;
-    const dots = dotsContainer ? dotsContainer.querySelectorAll('.slider-dot') : [];
 
     let current = 0;
 
     function getVisibleSlides() {
-      return window.innerWidth <= 600 ? 2 : 3;
+      return window.innerWidth <= 600 ? 1 : 3;
+    }
+
+    // Duplica slides para garantizar loop visual siempre
+    function ensureLoop() {
+      const VISIBLE = getVisibleSlides();
+      const existing = slider.querySelectorAll('.portfolio-slide').length;
+      // Necesitamos al menos VISIBLE*2 slides para que el loop funcione
+      while (slider.querySelectorAll('.portfolio-slide').length < VISIBLE * 2) {
+        originalSlides.forEach(slide => {
+          const clone = slide.cloneNode(true);
+          clone.dataset.clone = true;
+          slider.appendChild(clone);
+        });
+      }
+    }
+
+    function getAllSlides() {
+      return Array.from(slider.querySelectorAll('.portfolio-slide'));
+    }
+
+    function getTotal() {
+      return originalSlides.length; // dots basados en slides originales
+    }
+
+    function buildDots() {
+      if (!dotsContainer) return;
+      dotsContainer.innerHTML = '';
+      const total = getTotal();
+      for (let i = 0; i < total; i++) {
+        const btn = document.createElement('button');
+        btn.className = 'slider-dot' + (i === 0 ? ' active' : '');
+        btn.setAttribute('aria-label', `Slide ${i + 1}`);
+        btn.addEventListener('click', () => {
+          current = i;
+          updateSlider();
+        });
+        dotsContainer.appendChild(btn);
+      }
     }
 
     function updateSlider() {
       const VISIBLE = getVisibleSlides();
-      const total = Math.ceil(slides.length / VISIBLE);
+      const allSlides = getAllSlides();
+      const total = originalSlides.length;
 
-      slides.forEach((s, i) => {
-        s.style.display = (i >= current * VISIBLE && i < (current + 1) * VISIBLE)
-          ? ''
-          : 'none';
+      // Calcula qué índices mostrar con wrap circular
+      const indices = [];
+      for (let i = 0; i < VISIBLE; i++) {
+        indices.push((current + i) % total);
+      }
+
+      // Oculta todos
+      allSlides.forEach(s => s.style.display = 'none');
+
+      // Muestra solo los originales en los índices correctos
+      indices.forEach(idx => {
+        originalSlides[idx].style.display = '';
       });
 
-      dots.forEach((d, i) => {
-        d.classList.toggle('active', i === current);
-      });
+      // Actualiza dots (basado en el primer índice visible)
+      const dots = dotsContainer?.querySelectorAll('.slider-dot') || [];
+      dots.forEach((d, i) => d.classList.toggle('active', i === current % total));
     }
 
-    // INIT
+    ensureLoop();
+    buildDots();
     updateSlider();
 
-    // NEXT
     wrap.querySelector('.slider-arrow--next')?.addEventListener('click', () => {
-      const VISIBLE = getVisibleSlides();
-      const total = Math.ceil(slides.length / VISIBLE);
-
-      current = (current + 1) % total;
+      current = (current + 1) % originalSlides.length;
       updateSlider();
     });
 
-    // PREV
     wrap.querySelector('.slider-arrow--prev')?.addEventListener('click', () => {
-      const VISIBLE = getVisibleSlides();
-      const total = Math.ceil(slides.length / VISIBLE);
-
-      current = (current - 1 + total) % total;
+      current = (current - 1 + originalSlides.length) % originalSlides.length;
       updateSlider();
     });
 
-    // DOTS
-    dots.forEach((d, i) => {
-      d.addEventListener('click', () => {
-        current = i;
-        updateSlider();
-      });
+    window.addEventListener('resize', () => {
+      current = 0;
+      buildDots();
+      updateSlider();
     });
-
-    // RESPONSIVE FIX
-    window.addEventListener('resize', updateSlider);
   });
 }
