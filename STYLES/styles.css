@@ -83,7 +83,7 @@ ul { list-style: none; }
 .text-center  { text-align: center; }
 
 .section-title {
-  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  font-size: clamp(1.75rem, 2.8vw, 2.35rem);
   font-weight: 700;
   color: var(--dark);
   line-height: 1.22;
@@ -192,7 +192,7 @@ ul { list-style: none; }
 }
 
 .nav-logo img {
-  height: 32px;
+  height: 44px;
   width: auto;
 }
 
@@ -428,7 +428,7 @@ ul { list-style: none; }
 }
 
 .hero-headline {
-  font-size: clamp(2.4rem, 3vw, 3.4rem);
+  font-size: clamp(2.7rem, 3.4vw, 3.8rem);
   font-weight: 700;
   color: var(--white);
   line-height: 1.14;
@@ -448,7 +448,7 @@ ul { list-style: none; }
 }
 
 .hero-sub-item {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   color: rgba(255,255,255,0.8);
 }
 
@@ -495,7 +495,7 @@ ul { list-style: none; }
 }
 
 .hiw-content-col .section-title {
-  font-size: clamp(1.5rem, 2vw, 1.9rem);
+  font-size: clamp(1.75rem, 2.4vw, 2.2rem);
   font-weight: 700;
   color: var(--dark);
 }
@@ -699,7 +699,7 @@ ul { list-style: none; }
 }
 
 .ala-medida-text h2 {
-  font-size: clamp(2rem, 3vw, 2.9rem);
+  font-size: clamp(2.25rem, 3.4vw, 3.25rem);
   font-weight: 700;
   color: var(--white);
   line-height: 1.18;
@@ -710,10 +710,10 @@ ul { list-style: none; }
 }
 
 .ala-medida-text p {
-  font-size: 1rem;
+  font-size: 1.1rem;
   color: rgba(255,255,255,0.8);
   line-height: 1.65;
-  max-width: 400px;
+  max-width: 440px;
 }
 /* ============================================================
    PORTFOLIO PREVIEW — Nuestro trabajo
@@ -832,7 +832,7 @@ ul { list-style: none; }
 
 /* TÍTULO */
 .reasons-content .section-title {
-  font-size: 2rem;
+  font-size: clamp(2rem, 2.5vw, 2.3rem);
   line-height: 1.3;
 }
 
@@ -869,14 +869,14 @@ ul { list-style: none; }
 
 /* TEXTO */
 .reason-text h3 {
-  font-size: 0.95rem;
+  font-size: 1.05rem;
   font-weight: 700;
   color: #111;
   line-height: 1.4;
 }
 
 .reason-text p {
-  font-size: 0.85rem;
+  font-size: 0.92rem;
   color: #777;
 }
 
@@ -924,7 +924,7 @@ ul { list-style: none; }
   color: #fff;
   text-align: center;
   margin-bottom: 60px;
-  font-size: clamp(1.3rem, 2vw, 1.7rem);
+  font-size: clamp(1.55rem, 2.3vw, 1.95rem);
 }
 
 
@@ -1020,7 +1020,7 @@ ul { list-style: none; }
 
 /* TÍTULO */
 .sp-text h2 {
-  font-size: clamp(2.4rem, 3.5vw, 3rem);
+  font-size: clamp(2.65rem, 3.9vw, 3.4rem);
   font-weight: 700;
   color: #fff;
   line-height: 1.25;
@@ -1033,10 +1033,10 @@ ul { list-style: none; }
 
 /* DESCRIPCIÓN */
 .sp-text p {
-  font-size: 1rem;
+  font-size: 1.1rem;
   color: rgba(255,255,255,0.75);
   line-height: 1.6;
-  max-width: 380px;
+  max-width: 420px;
 }
 /* ============================================================
    CONTACT / FORMULARIO
@@ -1056,7 +1056,7 @@ ul { list-style: none; }
 
 /* TÍTULO GRANDE (CLAVE) */
 .contact .section-title {
-  font-size: clamp(2.6rem, 3.8vw, 3.2rem);
+  font-size: clamp(2.85rem, 4.2vw, 3.6rem);
   margin-bottom: 90px;
 }
 
@@ -1349,7 +1349,7 @@ ul { list-style: none; }
 }
 
 .page-hero-content h1 {
-  font-size: clamp(2.2rem, 4vw, 3.2rem);
+  font-size: clamp(2.5rem, 4.5vw, 3.6rem);
   font-weight: 700;
   color: var(--white);
   letter-spacing: 0.05em;
@@ -1391,12 +1391,12 @@ ul { list-style: none; }
 }
 
 .pricing-intro .section-title {
-  font-size: clamp(1.7rem, 2.5vw, 2.3rem);
+  font-size: clamp(1.95rem, 2.8vw, 2.65rem);
   font-weight: 700;
 }
 
 .pricing-intro p {
-  font-size: 0.88rem;
+  font-size: 0.98rem;
   margin-top: 10px;
 }
 
@@ -1522,17 +1522,17 @@ ul { list-style: none; }
 }
 
 .dfs-text h2 {
-  font-size: clamp(1.5rem, 2.5vw, 2.1rem);
+  font-size: clamp(1.75rem, 2.8vw, 2.4rem);
   font-weight: 700;
   color: var(--white);
   line-height: 1.28;
 }
 
 .dfs-text p {
-  font-size: 0.82rem;
+  font-size: 0.92rem;
   color: rgba(255,255,255,0.62);
   line-height: 1.72;
-  max-width: 440px;
+  max-width: 460px;
 }
 
 /* Card blanca flotante */
@@ -1581,14 +1581,14 @@ ul { list-style: none; }
 }
 
 .sm-table-inner .section-title {
-  font-size: clamp(1.5rem, 2.5vw, 2.1rem);
+  font-size: clamp(1.75rem, 2.8vw, 2.4rem);
   margin-bottom: 12px;
 }
 
 .sm-table-desc {
-  font-size: 0.84rem;
+  font-size: 0.94rem;
   color: var(--gray-mid);
-  max-width: 540px;
+  max-width: 560px;
   margin: 0 auto 44px;
   line-height: 1.65;
 }
@@ -1717,101 +1717,197 @@ ul { list-style: none; }
 }
 
 .portfolio-category-header .section-title {
-  font-size: clamp(1.5rem, 2.2vw, 2rem);
+  font-size: clamp(1.75rem, 2.5vw, 2.3rem);
 }
 
 .portfolio-category-header p {
-  font-size: 0.83rem;
+  font-size: 0.93rem;
   color: var(--gray-mid);
-  max-width: 540px;
+  max-width: 560px;
   margin: 10px auto 0;
   line-height: 1.65;
 }
 
-/* Slider */
-/* Slider wrap — contiene flechas */
+/* ============================================================
+   PORTFOLIO SLIDER — FINAL PRO (FIX COMPLETO)
+============================================================ */
+
+/* WRAP */
 .portfolio-slider-wrap {
   position: relative;
   display: flex;
   align-items: center;
-  padding: 0 50px; /* espacio para las flechas */
+  padding: 0 80px;
+  overflow: hidden;
 }
 
+/* 🔥 CAPAS PARA OCULTAR SOBRANTE (NO se ve la siguiente imagen) */
+.portfolio-slider-wrap::before,
+.portfolio-slider-wrap::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 80px;
+  z-index: 15;
+  pointer-events: none;
+}
+
+/* izquierda */
+.portfolio-slider-wrap::before {
+  left: 0;
+  background: #f4f4f4ad;
+}
+
+/* derecha */
+.portfolio-slider-wrap::after {
+  right: 0;
+  background: #f4f4f4ef;
+}
+
+/* TRACK */
 .portfolio-slider {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
+  display: flex;
+  gap: 24px;
+  transition: transform 0.45s ease;
   width: 100%;
+  will-change: transform;
 }
 
+/* SLIDES */
 .portfolio-slide {
-  border-radius: var(--radius-sm);
+  flex: 0 0 calc((100% - 48px) / 3);
+  max-width: calc((100% - 48px) / 3);
+  border-radius: 16px;
   overflow: hidden;
   aspect-ratio: 16/10;
-  background: #e0e0e0;
 }
 
-.portfolio-slide img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.4s ease;
-}
+/* =========================================
+   FLECHAS
+========================================= */
 
-.portfolio-slide:hover img {
-  transform: scale(1.04);
-}
-
-/* Flechas — absolute dentro de cada slider-wrap */
 .slider-arrow {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  width: 40px;
-  height: 40px;
+  width: 38px;
+  height: 38px;
   border-radius: 50%;
-  background: rgba(255,255,255,0.95);
-  border: 1px solid #ddd;
+  background: #ffffff;
+  border: none;
   display: flex;
   align-items: center;
   justify-content: center;
+  font-size: 0;
   cursor: pointer;
-  z-index: 10;
-  font-size: 1rem;
-  color: var(--dark);
-  transition: background var(--transition), box-shadow var(--transition);
-  box-shadow: 0 2px 10px rgba(0,0,0,0.12);
+  z-index: 20;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+  transition: all 0.25s ease;
+}
+
+.slider-arrow::before {
+  content: '';
+  width: 10px;
+  height: 10px;
+  border-top: 2px solid #777;
+  border-right: 2px solid #777;
+}
+
+.slider-arrow--next::before {
+  transform: rotate(45deg);
+}
+
+.slider-arrow--prev::before {
+  transform: rotate(-135deg);
 }
 
 .slider-arrow:hover {
-  background: var(--white);
-  box-shadow: 0 4px 14px rgba(0,0,0,0.2);
+  transform: translateY(-50%) scale(1.08);
 }
 
-.slider-arrow--prev { left: 0; }
-.slider-arrow--next { right: 0; }
+.slider-arrow:hover::before {
+  border-color: #929292a4;
+}
+
+/* 🔥 POSICIÓN CORRECTA (fuera de imágenes) */
+.slider-arrow--prev {
+  left: 20px;
+}
+
+.slider-arrow--next {
+  right: 20px;
+}
+
+/* =========================================
+   DOTS
+========================================= */
 
 .slider-dots {
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 8px;
-  margin-top: 20px;
+  margin-top: 28px;
 }
 
 .slider-dot {
-  height: 8px;
   width: 8px;
-  border-radius: 50%;
-  background: #ccc;
-  cursor: pointer;
-  transition: background var(--transition), transform var(--transition);
+  height: 8px;
+  border-radius: 20px;
+  background: #969595a2;
   border: none;
-  padding: 0;
+  transition: all 0.3s ease;
 }
 
 .slider-dot.active {
-  background: var(--dark);
-  transform: scale(1.3);
+  width: 24px;
+  height: 6px;
+  background: #b3aeae;
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 900px) {
+  .portfolio-slide {
+    flex: 0 0 calc((100% - 24px) / 2);
+    max-width: calc((100% - 24px) / 2);
+  }
+}
+
+@media (max-width: 600px) {
+  .portfolio-slide {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  .portfolio-slider-wrap {
+    padding: 0 20px;
+  }
+  .portfolio-slider-wrap {
+  overflow: hidden;
+}
+
+  .portfolio-slider-wrap::before,
+.portfolio-slider-wrap::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 80px;
+  z-index: 15;
+  pointer-events: none;
+
+  /* 🔥 invisible */
+  background: transparent;
+}
+
+  .slider-arrow {
+    width: 30px;
+    height: 30px;
+  }
 }
 
 /* ============================================================
@@ -1823,9 +1919,32 @@ ul { list-style: none; }
   }
 
   .hero-inner {
-    grid-template-columns: 44% 1fr;
+    width: 100%;
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding-left: var(--container-px);
+    padding-right: var(--container-px);
+    flex-direction: row;
     gap: 28px;
   }
+  .hero-content { max-width: 56%; }
+  .hero-visual { height: 440px; }
+  .hero-star   { width: 420px; left: -80px; }
+  .hero-target { width: 180px; left: 150px; top: 120px; }
+
+  .ala-medida-text {
+    padding-left: var(--container-px);
+    padding-right: var(--container-px);
+    max-width: 100%;
+  }
+
+  .specific-project .container { padding: 0 var(--container-px); }
+  .sp-text { max-width: 60%; }
+
+  .reasons-visual img:first-child { width: 420px; left: -80px; }
+  .reasons-visual img:last-child  { width: 320px; }
+
+  .footer-main { padding: 4rem 36px; }
 
   .hiw-inner {
     grid-template-columns: 240px 1fr;
@@ -1875,19 +1994,28 @@ ul { list-style: none; }
   .hamburger { display: flex; }
   .mobile-menu { display: flex; }
   .nav-inner { padding: 0 20px; }
+  .nav-logo img { height: 38px; }
 
   /* Hero */
-  .hero { min-height: auto; }
-  .hero-inner {
-    grid-template-columns: 1fr;
-    text-align: left;
-    gap: 16px;
-    padding-top: 36px;
-    padding-bottom: 44px;
+  .hero {
+    min-height: auto;
+    background-size: cover;
+    padding-bottom: 40px;
   }
+  .hero-inner {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 36px var(--container-px) 44px;
+    flex-direction: column;
+    text-align: left;
+    gap: 24px;
+  }
+  .hero-content { max-width: 100%; }
   .hero-visual {
     order: -1;
     height: 280px;
+    width: 100%;
   }
   .hero-star {
     width: 400px;
@@ -1961,29 +2089,44 @@ ul { list-style: none; }
   }
 
   /* Clients */
-  .clients-logos { gap: 28px; }
-  .clients-logos img { height: 26px; }
+  .clients-logos {
+    flex-wrap: wrap;
+    gap: 28px 36px;
+    justify-content: center;
+  }
+  .clients-logos img { width: 110px; height: auto; }
+  .clients-logos img:nth-child(2) { width: 80px; }
 
   /* SP card */
   .sp-card {
-    grid-template-columns: 1fr;
-    padding: 36px 24px 28px;
+    flex-direction: column;
+    padding: 48px 28px;
     gap: 28px;
+    min-height: 360px;
+    background-position: center center;
   }
+  .sp-text { max-width: 100%; }
+  .sp-text p { max-width: 100%; }
   .sp-mockups { justify-content: center; }
   .sp-phone--left   { width: 108px; }
   .sp-phone--center { width: 128px; }
   .sp-phone--right  { width: 108px; }
 
   /* Contact */
-  .form-row { grid-template-columns: 1fr; }
+  .contact { padding: 80px 0; }
+  .contact .section-title {
+    font-size: clamp(1.9rem, 8vw, 2.6rem);
+    margin-bottom: 48px;
+  }
+  .form-row { grid-template-columns: 1fr; gap: 20px; }
 
   /* Footer */
   .footer-main {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    gap: 20px;
+    gap: 28px;
+    padding: 3rem 20px;
   }
   .footer-nav {
     flex-wrap: wrap;
@@ -2014,11 +2157,26 @@ ul { list-style: none; }
    RESPONSIVE — SMALL MOBILE (≤ 480px)
 ============================================================ */
 @media (max-width: 480px) {
-  .hero-headline { font-size: 1.35rem; }
+  .hero-headline { font-size: clamp(1.9rem, 7vw, 2.3rem); }
+  .hero-sub-item { font-size: 1rem; }
   .portfolio-grid { grid-template-columns: 1fr; }
   .portfolio-item--tall img,
   .portfolio-item img { height: 220px; }
-  .section-title { font-size: 1.4rem; }
+  .section-title { font-size: clamp(1.6rem, 6vw, 1.9rem); }
+
+  .ala-medida-text h2 { font-size: clamp(1.9rem, 7vw, 2.4rem); }
+  .sp-text h2        { font-size: clamp(2rem, 7.5vw, 2.5rem); }
+  .page-hero-content h1 { font-size: clamp(2rem, 8vw, 2.6rem); }
+
+  .contact .section-title { font-size: clamp(1.8rem, 7vw, 2.3rem); }
+  .contact { padding: 64px 0; }
+
+  .hiw-content-col .section-title { font-size: clamp(1.5rem, 6vw, 1.85rem); }
+  .pricing-intro .section-title   { font-size: clamp(1.7rem, 6vw, 2.1rem); }
+
+  .footer-main { padding: 2.5rem 20px; }
+  .footer-logo img { height: 38px; }
+
   .sp-mockups {
     transform: scale(0.85);
     transform-origin: center bottom;

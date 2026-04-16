@@ -105,98 +105,97 @@ if (form) {
 
 const sliderWraps = document.querySelectorAll('.portfolio-slider-wrap');
 
-if (sliderWraps.length > 0) {
-  sliderWraps.forEach((wrap) => {
-    const slider = wrap.querySelector('.portfolio-slider');
-    const originalSlides = Array.from(slider.querySelectorAll('.portfolio-slide'));
-    const dotsContainer = wrap.nextElementSibling;
+sliderWraps.forEach((wrap) => {
+  const slider = wrap.querySelector('.portfolio-slider');
+  const slides = slider.querySelectorAll('.portfolio-slide');
+  const dotsContainer = wrap.nextElementSibling;
 
-    let current = 0;
+  const prevBtn = wrap.querySelector('.slider-arrow--prev');
+  const nextBtn = wrap.querySelector('.slider-arrow--next');
 
-    function getVisibleSlides() {
-      return window.innerWidth <= 600 ? 1 : 3;
+  let index = 0;
+
+  function getVisibleSlides() {
+    return window.innerWidth <= 600 ? 1 : 3;
+  }
+
+  function getTotalPages() {
+    return Math.ceil(slides.length / getVisibleSlides());
+  }
+
+  function updateControls() {
+    const visible = getVisibleSlides();
+
+    // 🔥 ocultar si no se necesita
+    if (slides.length <= visible) {
+      if (prevBtn) prevBtn.style.display = 'none';
+      if (nextBtn) nextBtn.style.display = 'none';
+      if (dotsContainer) dotsContainer.style.display = 'none';
+      return false;
+    } else {
+      if (prevBtn) prevBtn.style.display = '';
+      if (nextBtn) nextBtn.style.display = '';
+      if (dotsContainer) dotsContainer.style.display = 'flex';
+      return true;
     }
+  }
 
-    // Duplica slides para garantizar loop visual siempre
-    function ensureLoop() {
-      const VISIBLE = getVisibleSlides();
-      const existing = slider.querySelectorAll('.portfolio-slide').length;
-      // Necesitamos al menos VISIBLE*2 slides para que el loop funcione
-      while (slider.querySelectorAll('.portfolio-slide').length < VISIBLE * 2) {
-        originalSlides.forEach(slide => {
-          const clone = slide.cloneNode(true);
-          clone.dataset.clone = true;
-          slider.appendChild(clone);
-        });
-      }
-    }
+  function buildDots() {
+    if (!dotsContainer) return;
 
-    function getAllSlides() {
-      return Array.from(slider.querySelectorAll('.portfolio-slide'));
-    }
+    dotsContainer.innerHTML = '';
+    const total = getTotalPages();
 
-    function getTotal() {
-      return originalSlides.length; // dots basados en slides originales
-    }
-
-    function buildDots() {
-      if (!dotsContainer) return;
-      dotsContainer.innerHTML = '';
-      const total = getTotal();
-      for (let i = 0; i < total; i++) {
-        const btn = document.createElement('button');
-        btn.className = 'slider-dot' + (i === 0 ? ' active' : '');
-        btn.setAttribute('aria-label', `Slide ${i + 1}`);
-        btn.addEventListener('click', () => {
-          current = i;
-          updateSlider();
-        });
-        dotsContainer.appendChild(btn);
-      }
-    }
-
-    function updateSlider() {
-      const VISIBLE = getVisibleSlides();
-      const allSlides = getAllSlides();
-      const total = originalSlides.length;
-
-      // Calcula qué índices mostrar con wrap circular
-      const indices = [];
-      for (let i = 0; i < VISIBLE; i++) {
-        indices.push((current + i) % total);
-      }
-
-      // Oculta todos
-      allSlides.forEach(s => s.style.display = 'none');
-
-      // Muestra solo los originales en los índices correctos
-      indices.forEach(idx => {
-        originalSlides[idx].style.display = '';
+    for (let i = 0; i < total; i++) {
+      const dot = document.createElement('button');
+      dot.className = 'slider-dot' + (i === 0 ? ' active' : '');
+      dot.addEventListener('click', () => {
+        index = i;
+        updateSlider();
       });
+      dotsContainer.appendChild(dot);
+    }
+  }
 
-      // Actualiza dots (basado en el primer índice visible)
-      const dots = dotsContainer?.querySelectorAll('.slider-dot') || [];
-      dots.forEach((d, i) => d.classList.toggle('active', i === current % total));
+  function updateSlider() {
+    const visible = getVisibleSlides();
+    const slideWidth = slider.offsetWidth / visible;
+
+    slider.style.transform = `translateX(-${index * slideWidth * visible}px)`;
+
+    const dots = dotsContainer?.querySelectorAll('.slider-dot') || [];
+    dots.forEach((d, i) => d.classList.toggle('active', i === index));
+  }
+
+  function init() {
+    index = 0;
+
+    const needsControls = updateControls();
+
+    if (needsControls) {
+      buildDots();
     }
 
-    ensureLoop();
-    buildDots();
     updateSlider();
+  }
 
-    wrap.querySelector('.slider-arrow--next')?.addEventListener('click', () => {
-      current = (current + 1) % originalSlides.length;
-      updateSlider();
-    });
-
-    wrap.querySelector('.slider-arrow--prev')?.addEventListener('click', () => {
-      current = (current - 1 + originalSlides.length) % originalSlides.length;
-      updateSlider();
-    });
-
-    window.addEventListener('resize', () => {
-      current = 0;
-      buildDots();
-      updateSlider();
-    });
+  // Eventos
+  nextBtn?.addEventListener('click', () => {
+    const max = getTotalPages() - 1;
+    index = (index >= max) ? 0 : index + 1;
+    updateSlider();
   });
-}
+
+  prevBtn?.addEventListener('click', () => {
+    const max = getTotalPages() - 1;
+    index = (index <= 0) ? max : index - 1;
+    updateSlider();
+  });
+
+  window.addEventListener('resize', init);
+
+  // INIT
+  init();
+});
+
+document.getElementById("year").textContent = new Date().getFullYear();
