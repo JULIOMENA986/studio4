@@ -6,6 +6,11 @@ function loadComponent(id, file, callback) {
     .then(res => res.text())
     .then(data => {
       document.getElementById(id).innerHTML = data;
+
+      if (id === "footer-container") {
+        document.dispatchEvent(new CustomEvent('footerLoaded'));
+      }
+
       if (callback) callback();
     })
     .catch(err => console.error("Error loading component:", err));

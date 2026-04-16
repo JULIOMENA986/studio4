@@ -12,24 +12,27 @@ if (navbar) {
 // ===============================
 // HAMBURGER MENU
 // ===============================
-const hamburger = document.querySelector('.hamburger');
-const mobileMenu = document.getElementById('mobileMenu');
+document.addEventListener('click', (e) => {
+  const hamburger = e.target.closest('.hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
 
-if (hamburger && mobileMenu) {
-  hamburger.addEventListener('click', () => {
+  if (hamburger && mobileMenu) {
     const isOpen = mobileMenu.classList.toggle('open');
     hamburger.setAttribute('aria-expanded', isOpen);
     hamburger.classList.toggle('active', isOpen);
-  });
+    return; // Salimos para evitar conflictos
+  }
 
-  mobileMenu.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-      mobileMenu.classList.remove('open');
-      hamburger.classList.remove('active');
-      hamburger.setAttribute('aria-expanded', false);
-    });
-  });
-}
+  // 2. Cerrar el menú si hacen clic en un enlace interno
+  if (e.target.closest('#mobileMenu a')) {
+    const menu = document.getElementById('mobileMenu');
+    const btn = document.querySelector('.hamburger');
+    
+    menu.classList.remove('open');
+    btn?.classList.remove('active');
+    btn?.setAttribute('aria-expanded', 'false');
+  }
+});
 
 // ===============================
 // FORM (SOLO INDEX)
@@ -198,4 +201,10 @@ sliderWraps.forEach((wrap) => {
   init();
 });
 
-document.getElementById("year").textContent = new Date().getFullYear();
+document.addEventListener('footerLoaded', () => {
+  const yearElement = document.getElementById("year");
+  
+  if (yearElement) {
+    yearElement.textContent = new Date().getFullYear();
+  }
+});
